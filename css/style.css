@@ -1,10 +1,4 @@
-/*
-  ✅ ملف CSS منسق باحتراف
-  - متجاوب مع جميع الشاشات
-  - يضمن ظهور الشريط العلوي والسفلي
-  - يتضمن تنسيقات متكاملة للهيكل العام، الناف بار، الفوتر، الأقسام، والمحتوى
-*/
-/* ملف css/style.css */
+
 
 /* الأساسيات */
 :root {
@@ -719,20 +713,52 @@ section {
     color: white;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
+  .pricing-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -60px; /* تم تقليلها من -80 */
+    position: relative;
+    z-index: 1;
+  }
   
   .pricing-card {
+    flex: 1 1 300px;
+    max-width: 400px;
     background: white;
     border-radius: 20px;
-    padding: 40px;
-    margin-top: -80px;
+    padding: 40px 30px;
     position: relative;
-    transition: all 0.3s ease;
     border: 3px solid transparent;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    z-index: 2; /* حل مشكلة تراكب البطاقات */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
   }
   
   .pricing-card:hover {
     border-color: var(--secondary-color);
     transform: translateY(-10px);
+  }
+  
+  .pricing-card button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .pricing-card button:hover {
+    background: var(--primary-light);
   }
   
   .price-badge {
