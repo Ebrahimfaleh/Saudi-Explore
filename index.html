@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   السعوديه عبر الزمن | المنصة الذكية لاكتشاف معالم المملكة
+  </title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet"/>
+<style>
+   body { padding-top: 80px; }
+   @media (max-width: 768px) { body { padding-top: 100px; } }
+   .lang-options button { display: block !important; }
+   [data-lang] { display: none; }
+   [data-lang="ar"], [data-lang="en"] { display: none; }
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/LOGO.png" alt="السعوديه عبر الزمن" width="50"/>
+        <span data-lang="ar" data-lang-switch="ar" style="display:inline;">السعوديه عبر الزمن</span>
+        <span data-lang="en" data-lang-switch="en" style="display:none;">Saudi Through Time</span>
+      </a>
+
+      <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+
+      <div class="responsive-nav">
+        <ul class="nav-links">
+          <li><a href="#about" data-lang="ar" data-lang-switch="ar" style="display:inline;">عن المشروع</a></li>
+          <li><a href="#about" data-lang="en" data-lang-switch="en" style="display:none;">About</a></li>
+          <li><a href="#features" data-lang="ar" data-lang-switch="ar" style="display:inline;">المميزات</a></li>
+          <li><a href="#features" data-lang="en" data-lang-switch="en" style="display:none;">Features</a></li>
+          <li><a href="#map" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخريطة</a></li>
+          <li><a href="#map" data-lang="en" data-lang-switch="en" style="display:none;">Map</a></li>
+          <li><a href="specifications.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخصائص</a></li>
+          <li><a href="specifications.html" data-lang="en" data-lang-switch="en" style="display:none;">Specifications</a></li>
+          <li><a href="pricing.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الأسعار</a></li>
+          <li><a href="pricing.html" data-lang="en" data-lang-switch="en" style="display:none;">Price</a></li>
+          <li><a href="contact.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">تواصل</a></li>
+          <li><a href="contact.html" data-lang="en" data-lang-switch="en" style="display:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="lang-dropdown">
+        <button class="lang-icon"><i class="fas fa-globe"></i></button>
+        <div class="lang-options">
+          <button data-lang="ar" data-lang-switch="ar" style="display:inline;">العربية</button>
+          <button data-lang="en" data-lang-switch="en" style="display:none;">English</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- جزء يتم إدراجه في index.html بعد <nav> -->
+  <div id="smart-pattern-top" class="smart-pattern"></div>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+<div class="container">
+<div class="section-header">
+<h2>
+<span data-lang="ar" style="display:inline;">منصة السعوديه عبر الزمن</span>
+<span data-lang="en" style="display:none;">Saudi Through Time</span>
+</h2>
+<p>
+<span data-lang="ar" style="display:inline;">حل تقني مبتكر للتعرف على معالم المملكة العربية السعودية</span>
+<span data-lang="en" style="display:none;">Next-gen platform for cultural exploration</span>
+</p>
+</div>
+<div class="about-content">
+<div class="about-image"><img alt="واجهة التطبيق" src="images/app.png"/></div>
+<div class="about-text">
+<h3>
+<span data-lang="ar" style="display:inline;">فكرة المشروع</span>
+<span data-lang="en" style="display:none;">Our Vision</span>
+</h3>
+<p>
+<span data-lang="ar" style="display:inline;">منصة رقمية تستخدم تقنيات الذكاء الاصطناعي للتعرف على المعالم السياحية...</span>
+<span data-lang="en" style="display:none;">AI-powered platform combining historical data with immersive tech for cultural preservation</span>
+</p>
+<div class="features-icons">
+<div class="feature-icon">
+<i class="fas fa-camera"></i>
+<span>
+<span data-lang="ar" style="display:inline;">التعرف بالصورة</span>
+<span data-lang="en" style="display:none;">Visual Recognition</span>
+</span>
+</div>
+<div class="feature-icon">
+<i class="fas fa-microphone"></i>
+<span>
+<span data-lang="ar" style="display:inline;">التعرف الصوتي</span>
+<span data-lang="en" style="display:none;">Voice Guide</span>
+</span>
+</div>
+<div class="feature-icon">
+<i class="fas fa-map-marked-alt"></i>
+<span>
+<span data-lang="ar" style="display:inline;">خرائط تفاعلية</span>
+<span data-lang="en" style="display:none;">Smart Navigation</span>
+</span>
+</div>
+<div class="feature-icon">
+<i class="fas fa-history"></i>
+<span>
+<span data-lang="ar" style="display:inline;">رحلة عبر الزمن</span>
+<span data-lang="en" style="display:none;">Time Travel</span>
+</span>
+</div>
+</div>
+<a class="secondary-btn" href="how-it-works.html">
+<span data-lang="ar" style="display:inline;">كيف يعمل؟</span>
+<span data-lang="en" style="display:none;">How It Works</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section" id="features">
+<div class="container">
+<div class="section-header">
+<h2>
+<span data-lang="ar" style="display:inline;">مميزات المنصة</span>
+<span data-lang="en" style="display:none;">Key Features</span>
+</h2>
+<p>
+<span data-lang="ar" style="display:inline;">اكتشف ما يجعل السعوديه عبر الزمن مختلفًا</span>
+<span data-lang="en" style="display:none;">Innovative solutions for cultural discovery</span>
+</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-magic"></i></div>
+<h3 data-lang="ar">تجربة مستخدم فريدة</h3>
+<h3 data-lang="en" style="display:none;">Immersive UX</h3>
+<p data-lang="ar">واجهة بسيطة تعكس الهوية السعودية</p>
+<p data-lang="en" style="display:none;">Cultural-centric interface design</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-brain"></i></div>
+<h3 data-lang="ar">ذكاء اصطناعي متقدم</h3>
+<h3 data-lang="en" style="display:none;">Advanced AI</h3>
+<p data-lang="ar">نظام تعرف على المعالم بدقة 98%</p>
+<p data-lang="en" style="display:none;">98% accuracy in landmark recognition</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+<h3 data-lang="ar">مقارنة زمنية</h3>
+<h3 data-lang="en" style="display:none;">Time Comparison</h3>
+<p data-lang="ar">مقارنة بين الصور القديمة والحديثة</p>
+<p data-lang="en" style="display:none;">Historical vs modern comparisons</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-language"></i></div>
+<h3 data-lang="ar">متعدد اللغات</h3>
+<h3 data-lang="en" style="display:none;">Multilingual</h3>
+<p data-lang="ar">دعم للغات عالمية متعددة</p>
+<p data-lang="en" style="display:none;">Supports 12 global languages</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section" id="map">
+<div class="container">
+<div class="section-header">
+<h2 data-lang="ar">استكشف معالم المملكة</h2>
+<h2 data-lang="en" style="display:none;">Explore Saudi Heritage</h2>
+<p data-lang="ar">اختر مدينة لعرض معالمها السياحية</p>
+<p data-lang="en" style="display:none;">Select city to explore landmarks</p>
+</div>
+<div class="map-container">
+<div class="map-wrapper"><div id="interactive-map"></div></div>
+<div class="map-sidebar">
+<div class="search-box">
+<input id="map-search" placeholder="ابحث عن معلم..." type="text"/>
+<button id="search-btn"><i class="fas fa-search"></i></button>
+</div>
+<div class="cities-list">
+<h3 data-lang="ar">مدن المملكة</h3>
+<h3 data-lang="en" style="display:none;">Cities</h3>
+<ul id="cities-menu">
+<li data-city="riyadh">الرياض <span data-lang="en" style="display:none;">Riyadh</span></li>
+<li data-city="makkah">مكة <span data-lang="en" style="display:none;">Makkah</span></li>
+<li data-city="madina">المدينة <span data-lang="en" style="display:none;">Madinah</span></li>
+<li data-city="jeddah">جدة <span data-lang="en" style="display:none;">Jeddah</span></li>
+<li data-city="dammam">الدمام <span data-lang="en" style="display:none;">Dammam</span></li>
+<li data-city="alula">العلا <span data-lang="en" style="display:none;">AlUla</span></li>
+</ul>
+</div>
+<div class="landmarks-list">
+<h3 data-lang="ar">معالم <span id="selected-city-name">المملكة</span></h3>
+<h3 data-lang="en" style="display:none;">Landmarks in <span id="selected-city-name-en">Saudi</span></h3>
+<div id="landmarks-results">
+<div class="empty-state">
+<i class="fas fa-map-marker-alt"></i>
+<p data-lang="ar">اختر مدينة لعرض معالمها</p>
+<p data-lang="en" style="display:none;">Select city to view landmarks</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="container">
+<div class="cta-content">
+<h2>
+<span data-lang="ar">جاهزون لاكتشاف المملكة بطريقة جديدة؟</span>
+<span data-lang="en" style="display:none;">Ready to Explore Saudi Innovatively?</span>
+</h2>
+<p>
+<span data-lang="ar">سجل بريدك لتحصل على إشعار عند الإطلاق</span>
+<span data-lang="en" style="display:none;">Join waitlist for early access</span>
+</p>
+<form class="cta-form">
+<input placeholder="البريد الإلكتروني" type="email" required/>
+<button class="primary-btn" type="submit">
+<span data-lang="ar">اشتراك</span>
+<span data-lang="en" style="display:none;">Subscribe</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- شريط زخرفي سفلي -->
+<!-- Footer -->
+
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-logo">
+<img alt="السعوديه عبر الزمن" src="images/LOGO.png"/>
+<p data-lang="ar">المنصة الرائدة لاكتشاف التراث السعودي</p>
+<p data-lang="en" style="display:none;">Premier Platform for Saudi Heritage Discovery</p>
+</div>
+<div class="footer-links">
+<h4 data-lang="ar">روابط سريعة</h4>
+<h4 data-lang="en" style="display:none;">Quick Links</h4>
+<ul>
+<li><a href="#about" data-lang="ar">عن المشروع</a><a href="#about" data-lang="en" style="display:none;">About</a></li>
+<li><a href="#features" data-lang="ar">المميزات</a><a href="#features" data-lang="en" style="display:none;">Features</a></li>
+<li><a href="#map" data-lang="ar">الخريطة</a><a href="#map" data-lang="en" style="display:none;">Map</a></li>
+</ul>
+</div>
+<div class="footer-contact">
+<h4 data-lang="ar">تواصل معنا</h4>
+<h4 data-lang="en" style="display:none;">Contact</h4>
+<p><i class="fas fa-envelope"></i> info@sauditime.com</p>
+<p><i class="fas fa-phone"></i> +966 55 123 4567</p>
+</div>
+<div class="footer-social">
+<h4 data-lang="ar">تابعنا</h4>
+<h4 data-lang="en" style="display:none;">Follow Us</h4>
+<div class="social-icons">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p data-lang="ar">© 2023 جميع الحقوق محفوظة</p>
+<p data-lang="en" style="display:none;">© 2023 All Rights Reserved</p>
+</div>
+</div>
+</footer>
+
+<!-- Scripts -->
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="js/language.js"></script>
+<script src="js/main.js"></script>
+<script src="js/map.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.responsive-nav'); // العنصر الصحيح
+    const navLinks = document.querySelectorAll('.nav-links a');
+  
+    // فتح القائمة وإغلاقها عند الضغط على الزر ☰
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  
+    // إغلاق القائمة بعد الضغط على رابط
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    });
+  
+    // كود تبديل اللغة
+    const langIcon = document.querySelector('.lang-icon');
+    const langOptions = document.querySelector('.lang-options');
+    const langButtons = document.querySelectorAll("[data-lang-switch]");
+  
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
+      });
+      localStorage.setItem("preferredLang", lang);
+    }
+  
+    const savedLang = localStorage.getItem("preferredLang") || "ar";
+    setLanguage(savedLang);
+  
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const chosenLang = btn.getAttribute("data-lang-switch");
+        setLanguage(chosenLang);
+        langOptions.classList.remove('show');
+        e.stopPropagation();
+      });
+    });
+  
+    langIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langOptions.classList.toggle('show');
+    });
+  
+    document.addEventListener("click", (e) => {
+      if (!langIcon.contains(e.target) && !langOptions.contains(e.target)) {
+        langOptions.classList.remove("show");
+      }
+    });
+  });
+  </script>
+  <!-- سكربت يوضع قبل </body> -->
+  <script>
+    function updatePatternPosition() {
+      const navbar = document.querySelector('.navbar');
+      const topPattern = document.getElementById('smart-pattern-top');
+      if (navbar && topPattern) {
+        const navHeight = navbar.offsetHeight;
+        topPattern.style.top = navHeight + 'px';
+      }
+    }
+  
+    window.addEventListener('load', updatePatternPosition);
+    window.addEventListener('resize', updatePatternPosition);
+  </script>
+  
+
+</body>
+</html>

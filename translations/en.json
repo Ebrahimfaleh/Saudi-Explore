@@ -1,0 +1,19 @@
+{
+    "header": {
+        "title": "Saudi Through Time",
+        "nav": {
+            "about": "About",
+            "features": "Features",
+            "map": "Map",
+            "specs": "Specs",
+            "pricing": "Pricing",
+            "contact": "Contact"
+        }
+    },
+    "footer": {
+        "description": "AI-Powered Platform for Discovering Saudi Landmarks",
+        "quick_links": "Quick Links",
+        "contact": "Contact Us",
+        "follow": "Follow Us"
+    }
+}
