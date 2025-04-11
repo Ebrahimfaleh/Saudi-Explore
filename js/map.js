@@ -162,9 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .bindPopup(`
                     <h3>${landmark.name}</h3>
                     <p>${landmark.description.substring(0, 100)}...</p>
-                    <button onclick="showLandmarkDetail(${landmark.id})" class="map-popup-btn">
-                        عرض التفاصيل
-                    </button>
+                 
                 `);
             
             // Store the marker reference
@@ -176,9 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
             landmarkItem.innerHTML = `
                 <h4>${landmark.name}</h4>
                 <p>${landmark.description.substring(0, 60)}...</p>
-                <button onclick="showLandmarkDetail(${landmark.id})" class="view-btn">
-                    عرض التفاصيل
-                </button>
+                
             `;
             landmarksResults.appendChild(landmarkItem);
         });
