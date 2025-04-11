@@ -10,109 +10,50 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
   <style>
-   body { padding-top: 80px; }
-          @media (max-width: 768px) { body { padding-top: 100px; } }
-          .lang-options button { display: block !important; }
-          [data-lang] { display: none; }
-          [data-lang="ar"], [data-lang="en"] { display: none; }
-  </style>
+    body { padding-top: 80px; }
+    @media (max-width: 768px) { body { padding-top: 100px; } }
+    .lang-options button { display: block !important; }
+    [data-lang] { display: none; }
+    [data-lang="ar"], [data-lang="en"] { display: none; }
+ </style>
  </head>
  <body>
   <!-- شريط التنقل -->
   <nav class="navbar">
-   <div class="container">
-    <a class="logo" href="index.html">
-     <img alt="السعوديه عبر الزمن" src="images/LOGO.png" width="50"/>
-     <span data-lang="ar" data-lang-switch="ar" style="display:inline;">
-      السعوديه عبر الزمن
-     </span>
-     <span data-lang="en" data-lang-switch="en" style="display:none;">
-      Saudi Through Time
-     </span>
-    </a>
-    <div class="mobile-menu-toggle">
-     <i class="fas fa-bars">
-     </i>
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/LOGO.png" alt="السعوديه عبر الزمن" width="50"/>
+        <span data-lang="ar" data-lang-switch="ar" style="display:inline;">السعوديه عبر الزمن</span>
+        <span data-lang="en" data-lang-switch="en" style="display:none;">Saudi Through Time</span>
+      </a>
+
+      <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+
+      <div class="responsive-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">عن المشروع</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">About</a></li>
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">المميزات</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">Features</a></li>
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخريطة</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">Map</a></li>
+          <li><a href="specifications.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخصائص</a></li>
+          <li><a href="specifications.html" data-lang="en" data-lang-switch="en" style="display:none;">Specifications</a></li>
+          <li><a href="pricing.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الأسعار</a></li>
+          <li><a href="pricing.html" data-lang="en" data-lang-switch="en" style="display:none;">Price</a></li>
+          <li><a href="contact.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">تواصل</a></li>
+          <li><a href="contact.html" data-lang="en" data-lang-switch="en" style="display:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="lang-dropdown">
+        <button class="lang-icon"><i class="fas fa-globe"></i></button>
+        <div class="lang-options">
+          <button data-lang="ar" data-lang-switch="ar" style="display:inline;">العربية</button>
+          <button data-lang="en" data-lang-switch="en" style="display:none;">English</button>
+        </div>
+      </div>
     </div>
-    <div class="nav-menu responsive-nav">
-     <ul class="nav-links">
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="#about" style="display:inline;">
-        عن المشروع
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="#about" style="display:none;">
-        About
-       </a>
-      </li>
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="#features" style="display:inline;">
-        المميزات
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="#features" style="display:none;">
-        features
-       </a>
-      </li>
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="#map" style="display:inline;">
-        الخريطة
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="#map" style="display:none;">
-        Map
-       </a>
-      </li>
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="specifications.html" style="display:inline;">
-        الخصائص
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="specifications.html" style="display:none;">
-        specifications
-       </a>
-      </li>
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="pricing.html" style="display:inline;">
-        الأسعار
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="pricing.html" style="display:none;">
-        Price
-       </a>
-      </li>
-      <li>
-       <a data-lang="ar" data-lang-switch="ar" href="contact.html" style="display:inline;">
-        تواصل
-       </a>
-      </li>
-      <li>
-       <a data-lang="en" data-lang-switch="en" href="contact.html" style="display:none;">
-        contact us
-       </a>
-      </li>
-     </ul>
-    </div>
-    <div class="lang-dropdown">
-     <button class="lang-icon">
-      <i class="fas fa-globe">
-      </i>
-     </button>
-     <div class="lang-options">
-      <button data-lang="ar" data-lang-switch="ar" style="display:inline;">
-       العربية
-      </button>
-      <button data-lang="en" data-lang-switch="en" style="display:none;">
-       English
-      </button>
-     </div>
-    </div>
-   </div>
   </nav>
   <section class="how-it-works-page">
    <div class="container">

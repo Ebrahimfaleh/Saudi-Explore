@@ -15,42 +15,47 @@
     @media (max-width: 768px) { body { padding-top: 100px; } }
     .lang-options button { display: block !important; }
     [data-lang] { display: none; }
-</style>
+    [data-lang="ar"], [data-lang="en"] { display: none; }
+ </style>
+</head>
   <body>
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/LOGO.png" alt="السعوديه عبر الزمن" width="50"/>
+        <span data-lang="ar" data-lang-switch="ar" style="display:inline;">السعوديه عبر الزمن</span>
+        <span data-lang="en" data-lang-switch="en" style="display:none;">Saudi Through Time</span>
+      </a>
 
-      <!-- شريط التنقل -->
-      <nav class="navbar">
-        <div class="container">
-            <a class="logo" href="index.html">
-                <img alt="السعوديه عبر الزمن" src="images/LOGO.png" width="50"/>
-                <span data-lang="ar">السعوديه عبر الزمن</span>
-                <span data-lang="en">Saudi Through Time</span>
-            </a>
-            
-            <div class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <div class="nav-menu responsive-nav">
-                <ul class="nav-links">
-                    <li><a href="#about" data-lang="ar">عن المشروع</a><a href="#about" data-lang="en">About</a></li>
-                    <li><a href="#features" data-lang="ar">المميزات</a><a href="#features" data-lang="en">Features</a></li>
-                    <li><a href="#map" data-lang="ar">الخريطة</a><a href="#map" data-lang="en">Map</a></li>
-                    <li><a href="specifications.html" data-lang="ar">الخصائص</a><a href="specifications.html" data-lang="en">Specs</a></li>
-                    <li><a href="pricing.html" data-lang="ar">الأسعار</a><a href="pricing.html" data-lang="en">Pricing</a></li>
-                    <li><a href="contact.html" data-lang="ar">تواصل</a><a href="contact.html" data-lang="en">Contact</a></li>
-                </ul>
-            </div>
+      <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
 
-            <div class="lang-dropdown">
-                <button class="lang-icon"><i class="fas fa-globe"></i></button>
-                <div class="lang-options">
-                    <button data-lang-switch="ar">العربية</button>
-                    <button data-lang-switch="en">English</button>
-                </div>
-            </div>
+      <div class="responsive-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">عن المشروع</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">About</a></li>
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">المميزات</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">Features</a></li>
+          <li><a href="index.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخريطة</a></li>
+          <li><a href="index.html" data-lang="en" data-lang-switch="en" style="display:none;">Map</a></li>
+          <li><a href="specifications.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الخصائص</a></li>
+          <li><a href="specifications.html" data-lang="en" data-lang-switch="en" style="display:none;">Specifications</a></li>
+          <li><a href="pricing.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">الأسعار</a></li>
+          <li><a href="pricing.html" data-lang="en" data-lang-switch="en" style="display:none;">Price</a></li>
+          <li><a href="contact.html" data-lang="ar" data-lang-switch="ar" style="display:inline;">تواصل</a></li>
+          <li><a href="contact.html" data-lang="en" data-lang-switch="en" style="display:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="lang-dropdown">
+        <button class="lang-icon"><i class="fas fa-globe"></i></button>
+        <div class="lang-options">
+          <button data-lang="ar" data-lang-switch="ar" style="display:inline;">العربية</button>
+          <button data-lang="en" data-lang-switch="en" style="display:none;">English</button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
    <section class="contact-hero">
     <div class="container">
@@ -224,61 +229,8 @@
 <script src="js/language.js"></script>
 <script src="js/main.js"></script>
 <script src="js/map.js"></script>
+<script src="js/navbar.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.responsive-nav'); // العنصر الصحيح
-    const navLinks = document.querySelectorAll('.nav-links a');
-  
-    // فتح القائمة وإغلاقها عند الضغط على الزر ☰
-    toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  
-    // إغلاق القائمة بعد الضغط على رابط
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-      });
-    });
-  
-    // كود تبديل اللغة
-    const langIcon = document.querySelector('.lang-icon');
-    const langOptions = document.querySelector('.lang-options');
-    const langButtons = document.querySelectorAll("[data-lang-switch]");
-  
-    function setLanguage(lang) {
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
-      });
-      localStorage.setItem("preferredLang", lang);
-    }
-  
-    const savedLang = localStorage.getItem("preferredLang") || "ar";
-    setLanguage(savedLang);
-  
-    langButtons.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        const chosenLang = btn.getAttribute("data-lang-switch");
-        setLanguage(chosenLang);
-        langOptions.classList.remove('show');
-        e.stopPropagation();
-      });
-    });
-  
-    langIcon.addEventListener('click', (e) => {
-      e.stopPropagation();
-      langOptions.classList.toggle('show');
-    });
-  
-    document.addEventListener("click", (e) => {
-      if (!langIcon.contains(e.target) && !langOptions.contains(e.target)) {
-        langOptions.classList.remove("show");
-      }
-    });
-  });
-  </script>
-  </body>
- </head>
+</body>
+
 </html>
