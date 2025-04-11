@@ -229,7 +229,75 @@
 <script src="js/language.js"></script>
 <script src="js/main.js"></script>
 <script src="js/map.js"></script>
-<script src="js/navbar.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.responsive-nav'); // العنصر الصحيح
+    const navLinks = document.querySelectorAll('.nav-links a');
+  
+    // فتح القائمة وإغلاقها عند الضغط على الزر ☰
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  
+    // إغلاق القائمة بعد الضغط على رابط
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    });
+  
+    // كود تبديل اللغة
+    const langIcon = document.querySelector('.lang-icon');
+    const langOptions = document.querySelector('.lang-options');
+    const langButtons = document.querySelectorAll("[data-lang-switch]");
+  
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "inline" : "none";
+      });
+      localStorage.setItem("preferredLang", lang);
+    }
+  
+    const savedLang = localStorage.getItem("preferredLang") || "ar";
+    setLanguage(savedLang);
+  
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const chosenLang = btn.getAttribute("data-lang-switch");
+        setLanguage(chosenLang);
+        langOptions.classList.remove('show');
+        e.stopPropagation();
+      });
+    });
+  
+    langIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langOptions.classList.toggle('show');
+    });
+  
+    document.addEventListener("click", (e) => {
+      if (!langIcon.contains(e.target) && !langOptions.contains(e.target)) {
+        langOptions.classList.remove("show");
+      }
+    });
+  });
+  </script>
+  <!-- سكربت يوضع قبل </body> -->
+  <script>
+    function updatePatternPosition() {
+      const navbar = document.querySelector('.navbar');
+      const topPattern = document.getElementById('smart-pattern-top');
+      if (navbar && topPattern) {
+        const navHeight = navbar.offsetHeight;
+        topPattern.style.top = navHeight + 'px';
+      }
+    }
+  
+    window.addEventListener('load', updatePatternPosition);
+    window.addEventListener('resize', updatePatternPosition);
+  </script></script>
 
 </body>
 
