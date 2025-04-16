@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         riyadh: [
             {
                 id: 1,
-                name: "قصر المصمك",
+                name: "الدرعية التاريخية",
                 type: "historical",
-                location: [24.6310, 46.7146],
-                description: "قلعة تاريخية في الرياض تعود إلى عام 1865، كانت مسرحًا لاستعادة الرياض على يد الملك عبدالعزيز آل سعود",
+                location: [24.7365, 46.5762],
+                description: "الدرعية هي العاصمة الأولى للدولة السعودية الأولى",
                 images: ["masmak1.jpg", "masmak2.jpg"],
                 oldImage: "images/old/masmak-old.jpg",
                 newImage: "images/new/masmak-new.jpg"
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 id: 2,
                 name: "المتحف الوطني السعودي",
                 type: "cultural",
-                location: [24.6476, 46.7136],
+                location: [24.6486, 46.7100],
                 description: "أكبر المتاحف في المملكة، يوثق تاريخ شبه الجزيرة العربية وتاريخ الدولة السعودية",
                 images: ["museum1.jpg", "museum2.jpg"],
                 oldImage: "",
@@ -69,6 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
         jeddah: [
             {
                 id: 6,
+                name: "جدة التاريخية (البلد)",
+                type: "modern",
+                location: [21.4858, 39.1925],
+                description: "منطقة قديمة في قلب جدة، يرجع تاريخها لأكثر من 1400 سنة",
+                images: ["fountain1.jpg", "fountain2.jpg"],
+                oldImage: "",
+                newImage: "fountain-new.jpg"
+            },
+            {
+                id: 7,
                 name: "نافورة الملك فهد",
                 type: "modern",
                 location: [21.5169, 39.1782],
@@ -80,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         dammam: [
             {
-                id: 7,
+                id: 8,
                 name: "الكورنيش",
                 type: "modern",
                 location: [26.4336, 50.1143],
@@ -92,11 +102,50 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         alula: [
             {
-                id: 8,
+                id: 9,
                 name: "مدائن صالح",
                 type: "historical",
-                location: [26.7925, 37.9477],
+                location: [26.8006, 37.9538],
                 description: "موقع تراث عالمي يضم آثار قوم ثمود المنحوتة في الجبال",
+                images: ["madaen1.jpg", "madaen2.jpg"],
+                oldImage: "madaen-old.jpg",
+                newImage: "madaen-new.jpg"
+            }
+        ],
+        Ahsa: [
+
+          {
+                id: 10,
+                name: "واحة الأحساء",
+                type: "historical",
+                location: [25.3839, 49.5964],
+                description: "أكبر واحة نخيل في العالم (أكثر من 3 مليون نخلة )، وهي ضمن التراث العالمي لليونسكو",
+                images: ["madaen1.jpg", "madaen2.jpg"],
+                oldImage: "madaen-old.jpg",
+                newImage: "madaen-new.jpg"
+        }
+        ],
+        Tabuk: [
+
+            {
+                id: 11,
+                name: "قلعة تبوك",
+                type: "historical",
+                location: [28.3995, 36.5789],
+                description: "بُنيت في القرن السادس عشر، وكانت محطة مهمة للحجاج القادمين من الشام",
+                images: ["madaen1.jpg", "madaen2.jpg"],
+                oldImage: "madaen-old.jpg",
+                newImage: "madaen-new.jpg"
+            }
+        ],
+        Baha: [
+
+            {
+                id: 12,
+                name: "قرية ذي عين التراثية",
+                type: "historical",
+                location: [19.9120, 41.4445],
+                description: "قرية حجرية قديمة جداً تقع على سفح جبل أبيض، عمرها أكثر من 400 سنة",
                 images: ["madaen1.jpg", "madaen2.jpg"],
                 oldImage: "madaen-old.jpg",
                 newImage: "madaen-new.jpg"
@@ -111,7 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
         madina: { name: "المدينة المنورة", location: [24.5247, 39.5692] },
         jeddah: { name: "جدة", location: [21.5435, 39.1730] },
         dammam: { name: "الدمام", location: [26.4207, 50.0888] },
-        alula: { name: "العلا", location: [26.6085, 37.9232] }
+        alula: { name: "العلا", location: [26.6085, 37.9232] },
+        Baha: { name: "الباحة", location: [19.9120, 41.4445] },
+        Tabuk: { name: "تبوك", location: [28.3995, 36.5789] },
+        Ahsa: { name: "الإحساء", location: [25.3839, 49.5964] },
     };
     
     // Object to store landmark markers
