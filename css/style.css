@@ -625,7 +625,7 @@ section {
 
 .feature-card::after {
   content: "";
-  background-image: url('../images/icons/icon2.png'); /* المسار النسبي */
+  background-image: url('../images/icons/cambel.png'); /* المسار النسبي */
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px; /* حجم الصورة */
